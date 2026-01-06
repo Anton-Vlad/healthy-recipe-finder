@@ -1,0 +1,102 @@
+<div class="min-h-screen bg-neutral-100">
+  <div>
+    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 616" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_104_1780)">
+        <path opacity="0.4" d="M-132.333 886.836C-166.242 776.434 -199.341 657.272 -170.875 541.675C-135.855 399.349 -21.8702 322.418 122.45 328.743C335.279 338.094 505.647 502.161 705.199 560.394C1119.87 681.434 1403.46 359.024 1488.9 -16.535C1494.16 -39.6403 1458.69 -50.3107 1453.39 -27.0244C1400.34 206.22 1278.77 447.674 1036.54 527.994C780.232 612.964 563.335 450.817 341.844 350.094C205.245 287.962 25.0637 254.008 -101.772 357.208C-265.091 490.085 -221.993 721.787 -168.234 895.94C-161.207 918.651 -125.325 909.638 -132.333 886.836Z" fill="#697DDB"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_104_1780">
+          <rect width="1440" height="616" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+
+  <app-container>
+    <div class="text-left lg:text-center pt-12 text-balance">
+      <h1 class="text-preset-1 text-neutral-900 mb-1">
+        Healthy meals, zero fuss
+      </h1>
+      <p class="text-preset-6 text-neutral-900 mb-8">
+        Discover eight quick, whole-food recipes that you can cook tonight<br>—no processed junk, no guesswork.
+      </p>
+
+      <div class="flex gap-4 lg:justify-center">
+        <a routerLink="/about"
+           class="bg-neutral-900 text-white px-8 py-4 rounded-lg text-preset-5 flex hover:bg-indigo-700 transition-colors">
+          Start exploring
+        </a>
+      </div>
+
+      <div class="mb-8 border-neutral-0 border-8 rounded-xl border-solid mt-12 z-10 relative">
+        <img
+          ngSrc="/banner-sm.jpg"
+          alt="Healthy recipes banner"
+          width="400"
+          height="250"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 59vw, 80vw"
+          srcset="
+          /banner-sm.jpg 400w,
+          /banner-md.jpg 704w,
+          /banner-lg.jpg 1192w
+        "
+          class="w-full h-auto rounded-lg"
+          priority
+        />
+      </div>
+    </div>
+  </app-container>
+
+  <app-container class="flex z-10 relative mt-16">
+    <h2 class="text-preset-2 text-neutral-900 mb-1 lg:text-center">
+      What you’ll get
+    </h2>
+    <div class="grid lg:grid-cols-3 gap-8 mt-16">
+      <div class="">
+        <div class="inline-flex p-3 bg-white rounded-lg shadow-md mb-4 w-[60px] h-[60px]">
+          <img
+            ngSrc="/carrot.svg"
+            alt="Carrot Icon"
+            width="40"
+            height="40"
+            class="w-full h-auto"
+            priority
+          />
+        </div>
+        <h3 class="text-preset-3 text-neutral-900 mb-1">Whole-food recipes</h3>
+        <p class="text-preset-6 text-neutral-900">Each dish uses everyday, unprocessed ingredients.</p>
+      </div>
+      <div class="">
+        <div class="inline-flex p-2 bg-white rounded-lg shadow-md mb-4 w-[60px] h-[60px]">
+          <img
+            ngSrc="/flash.svg"
+            alt="Flash Icon"
+            width="40"
+            height="40"
+            class="w-full h-auto"
+            priority
+          />
+        </div>
+        <h3 class="text-preset-3 text-neutral-900 mb-1">Minimum fuss</h3>
+        <p class="text-preset-6 text-neutral-900">All recipes are designed to make eating healthy quick and easy.</p>
+      </div>
+      <div class="">
+        <div class="inline-flex p-3 bg-white rounded-lg shadow-md mb-4 w-[60px] h-[60px]">
+          <img
+            ngSrc="/search.svg"
+            alt="Search Menu Hamburger Icon"
+            width="40"
+            height="40"
+            class="w-full h-auto"
+            priority
+          />
+        </div>
+        <h3 class="text-preset-3 text-neutral-900 mb-1">Search in seconds</h3>
+        <p class="text-preset-6 text-neutral-900">Filter by name or ingredient and jump straight to the recipe you need.</p>
+      </div>
+    </div>
+  </app-container>
+
+  <app-container class="flex z-10 relative pt-24">
+  </app-container>
+</div>
