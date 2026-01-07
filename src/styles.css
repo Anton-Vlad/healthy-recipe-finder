@@ -25,6 +25,11 @@
   --font-nunito-sans: 'Nunito Sans', sans-serif;
 }
 
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-color: var(--color-neutral-300);
+}
+
 /* ========== Text Presets ========== */
 .text-preset-1 {
   font-family: var(--font-nunito);
@@ -84,7 +89,7 @@
   letter-spacing: -0.5px;
 }
 
-.text-preset-6 {
+.text-preset-6, p {
   font-family: var(--font-nunito-sans);
   font-weight: 500;
   font-size: 20px;
@@ -137,7 +142,7 @@
 .text-indigo-500 { color: var(--color-indigo-500); }
 
 .bg-neutral-900 { background-color: var(--color-neutral-900); }
-.bg-neutral-600 { background-color: var(--color-neutral-600); }
+.bg-neutral-600 { background-color: var(--color-neutral-600) !important; }
 .bg-neutral-300 { background-color: var(--color-neutral-300); }
 .bg-neutral-200 { background-color: var(--color-neutral-200); }
 .bg-neutral-100 { background-color: var(--color-neutral-100); }
@@ -157,3 +162,21 @@
 .border-teal-500 { border-color: var(--color-teal-500); }
 .border-indigo-500 { border-color: var(--color-indigo-500); }
 
+body {
+  background-color: var(--color-neutral-100);
+}
+
+p {
+  color: var(--color-neutral-600);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-neutral-900);
+}
+
+a {
+  transition: 0.2s background-color ease-in-out;
+}
+a.button:hover {
+  background-color: var(--color-neutral-600);
+}

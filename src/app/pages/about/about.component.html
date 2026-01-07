@@ -1,38 +1,121 @@
-<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100">
-  <div class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      <a routerLink="/"
-         class="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8">
-        <span class="mr-2">←</span> Back to Home
-      </a>
+<div class="min-h-screen">
 
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        About Us
-      </h1>
+  <div class="relative w-full md:px-8 md:max-w-[704px] lg:max-w-[1192px] mx-auto">
+    <app-container class="flex z-10 relative mt-16">
+      <div class="flex justify-center items-center mt-16 gap-16 flex-col lg:flex-row">
+        <div class="flex-1">
+          <p class="text-preset-5 text-neutral-900 bg-orange-500 px-2 py-1 mb-6 rounded-md inline-flex">Our mission</p>
+          <h1 class="text-preset-2 mb-6 text-balanced">
+            Help more people cook nourishing meals,
+            more often.
+          </h1>
+          <p class=" mb-2 text-balanced">
+            Healthy Recipe Finder was created to prove that healthy eating can be convenient, affordable, and genuinely delicious.
+          </p>
+          <p class=" text-balanced">
+            We showcase quick, whole-food dishes that anyone can master—no fancy equipment, no ultra-processed shortcuts—just honest ingredients and straightforward steps.
+          </p>
+        </div>
+        <div class="flex-1 lg:w-[50%]">
+          <img
+            ngSrc="/banner3-sm.jpg"
+            alt="Healthy recipes banner"
+            width="1372"
+            height="600"
+            sizes="(max-width: 768px) 100vw, 80vw"
+            srcset="
+            /banner3-sm.jpg 372w,
+            /banner3-lg.jpg 672w,
+          "
+            class="w-full h-auto aspect-square rounded-xl"
+            priority
+          />
+        </div>
+      </div>
+    </app-container>
+    <svg class="hidden xl:block absolute z-20 bottom-10 -right-10" width="205" height="242" viewBox="0 0 205 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.59911 63.5656C35.3766 52.3493 37.1067 96.1067 44.277 108.763C48.0567 115.427 53.4855 122.302 60.9837 125.006C87.0851 134.432 127.779 82.8604 137.573 125.962C142.474 147.543 136.389 169.84 156.353 185.897C170.005 196.88 186.953 196.703 200.499 186.501C205.945 182.398 199.064 174.321 193.664 178.442C172.599 194.529 154.677 167.175 150.015 150.759C147.682 142.547 148.954 134.391 148.15 126.112C147.413 118.523 146.544 112.142 141.65 105.987C131.931 93.7584 114.659 93.0169 101.208 98.6591C97.9266 100.031 95.0641 102.33 91.89 103.867C83.3851 107.978 66.4053 113.684 56.9552 108.914C48.4365 104.618 45.8968 73.6939 39.8592 64.9433C31.5996 52.9748 18.9507 47.7884 5.48395 53.469C-0.737393 56.0885 2.3119 66.1968 8.59911 63.5656Z" fill="#49AC9B"/>
+    </svg>
+  </div>
 
-      <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-        <p class="text-lg text-gray-700 mb-4">
-          This is a simple landing page application built with Angular 19 and styled with Tailwind CSS v3.
+  <app-differentiators [customClasses]="'mt-16 border-t'"
+    [title]="'Why we exist'"
+    [items]="[
+      {
+        title: 'Cut through the noise.',
+        description: 'The internet is bursting with recipes, yet most busy cooks still default to take-away or packaged foods. We curate a tight collection of fool-proof dishes so you can skip the scrolling and start cooking.'
+      },
+      {
+        title: 'Empower home kitchens.',
+        description: 'When you control what goes into your meals, you control how you feel. Every recipe is built around unrefined ingredients and ready in about half an hour of active prep.'
+      },
+      {
+        title: 'Make healthy look good.',
+        description: 'High-resolution imagery shows you exactly what success looks like—because we eat with our eyes first, and confidence matters.'
+      }
+    ]"
+  ></app-differentiators>
+
+  <app-differentiators [customClasses]="'border-t border-b'"
+    [title]="'Our food philosophy'"
+    [items]="[
+      {
+        title: 'Whole ingredients first.',
+        description: 'Fresh produce, grains, legumes, herbs, and quality fats form the backbone of every recipe.'
+      },
+      {
+        title: 'Flavor without compromise.',
+        description: 'Spices, citrus, and natural sweetness replace excess salt, sugar, and additives.'
+      },
+      {
+        title: 'Respect for time.',
+        description: 'Weeknight meals should slot into real schedules; weekend cooking can be leisurely but never wasteful.'
+      },
+      {
+        title: 'Sustainable choices.',
+        description: 'Short ingredient lists cut down on food waste and carbon footprint, while plant-forward dishes keep things planet-friendly.'
+      }
+    ]"
+  ></app-differentiators>
+
+  <app-container class="flex z-10 relative mt-16">
+    <div class="flex justify-center items-center mt-16 gap-16 flex-col lg:flex-row">
+      <div class="flex-1 lg:flex-[0_0_32%]">
+        <h2 class="text-preset-2 mb-4 text-balanced">
+          Beyond the plate
+        </h2>
+        <p class="mb-3 text-balanced">
+          We believe food is a catalyst for community and well-being. By sharing approachable recipes, we hope to:
         </p>
-        <p class="text-lg text-gray-700 mb-4">
-          The application demonstrates:
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-          <li>Angular 19 standalone components</li>
-          <li>Client-side rendering (no SSR)</li>
-          <li>Tailwind CSS v3 for styling</li>
-          <li>Routing between pages</li>
-          <li>Responsive design</li>
+        <ul class="text-preset-6 text-neutral-600 list-disc ps-8 space-y-2">
+          <li>
+            Encourage family dinners and social cooking.
+          </li>
+          <li>
+            Reduce reliance on single-use packaging and delivery waste.
+          </li>
+          <li>
+            Spark curiosity about seasonal produce and local agriculture.
+          </li>
         </ul>
       </div>
-
-      <div class="bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
-        <p class="text-gray-700">
-          We're here to showcase how easy it is to build modern, beautiful web applications
-          using the latest Angular framework combined with the utility-first CSS framework, Tailwind CSS.
-        </p>
+      <div class="flex-1 lg:flex-[0_0_calc(68%-4rem)]">
+        <img
+          ngSrc="/banner4-sm.jpg"
+          alt="Healthy recipes banner"
+          width="1372"
+          height="973"
+          sizes="(max-width: 768px) 100vw, 80vw"
+          srcset="
+          /banner4-sm.jpg 372w,
+          /banner4-lg.jpg 672w,
+        "
+          class="w-full h-auto rounded-xl"
+          priority
+        />
       </div>
     </div>
-  </div>
+  </app-container>
+
+  <app-banner></app-banner>
 </div>
