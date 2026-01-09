@@ -1,0 +1,67 @@
+
+<app-container>
+  <div class="text-left lg:text-center pt-20 text-balance z-10 relative">
+    <h1 class="text-preset-1 mb-3 mx-auto">
+      Explore our simple, healthy recipes
+    </h1>
+    <p class="mb-8 max-w-[790px] mx-auto">
+      Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.
+    </p>
+  </div>
+</app-container>
+
+<app-container>
+  <div class="flex flex-row gap-4 mb-6">
+    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">Max Prep Time</div>
+    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">Max Cook Time</div>
+    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900 ms-auto me-0">Search by name or ingredient…</div>
+  </div>
+  <div *ngIf="loading">Loading recipes...</div>
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+    <div *ngFor="let recipe of recipes" class="recipe-item p-2 bg-neutral-0 rounded-lg shadow-md">
+      <div class="overflow-hidden h-[300px] md:h-[450px] lg:h-[300px] rounded-lg mb-4">
+        <img
+          [ngSrc]="recipe.image.large"
+          [alt]="recipe.title"
+          width="360"
+          height="360"
+          class="w-full h-full object-cover"
+          priority
+        />
+      </div>
+      <h4 class="text-preset-5 mb-2 mx-2 text-ellipsis overflow-hidden whitespace-nowrap">{{ recipe.title }}</h4>
+      <p class="text-preset-9 mb-2 mx-2">{{ recipe.overview }}</p>
+      <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 mb-4 mx-2">
+        <label class="flex gap-1 items-center">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.76046 10.5949C11.8405 10.5949 13.5205 8.91491 13.5205 6.83495C13.6005 4.75495 11.9205 3.07495 9.76046 3.07495C7.68049 3.07495 6.00049 4.75495 6.00049 6.83495C6.00049 8.91491 7.68049 10.5949 9.76046 10.5949Z" fill="#163A34"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2804 15.6362C15.0404 14.7562 14.5604 13.9562 13.6004 13.3162C12.8004 12.7562 11.5204 12.3562 9.76044 12.3562C6.32047 12.3562 4.64047 13.9562 4.16047 15.6362C4.00047 16.1162 4.24047 16.5962 4.64047 16.8362C6.08047 17.7962 7.84047 18.2762 9.76044 18.2762C11.6004 18.2762 13.3604 17.7162 14.8004 16.8362C15.2004 16.5962 15.4404 16.1162 15.2804 15.6362Z" fill="#163A34"/>
+          </svg>
+          Servings: {{ recipe.servings }}
+        </label>
+        <label class="flex gap-1 items-center">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8015 13.0876C12.6849 13.2876 12.4765 13.396 12.2682 13.396C12.1599 13.396 12.0432 13.3626 11.9432 13.3043L9.6682 11.9376C9.47654 11.8293 9.35987 11.621 9.35987 11.4043V8.46262C9.35987 8.11259 9.6432 7.83759 9.98487 7.83759C10.3265 7.83759 10.6099 8.11259 10.6099 8.46262V11.046L12.5849 12.2376C12.8849 12.4126 12.9849 12.796 12.8015 13.0876ZM10.1265 4.19592C6.4599 4.19592 3.47656 7.17926 3.47656 10.846C3.47656 14.5126 6.4599 17.496 10.1265 17.496C13.7932 17.496 16.7765 14.5126 16.7765 10.846C16.7765 7.17926 13.7932 4.19592 10.1265 4.19592Z" fill="#163A34"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66371 3.66875C5.95787 3.48708 6.04871 3.10208 5.86704 2.80875C5.68454 2.51458 5.29954 2.42375 5.00704 2.60541C3.86287 3.31125 2.86287 4.26375 2.11537 5.35958C1.92121 5.64458 1.99454 6.03375 2.27954 6.22791C2.38704 6.30208 2.50954 6.33708 2.63121 6.33708C2.83121 6.33708 3.02704 6.24125 3.14787 6.06458C3.79787 5.11208 4.66787 4.28375 5.66371 3.66875Z" fill="#163A34"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1484 5.35997C17.3934 4.25163 16.39 3.2958 15.2475 2.5958C14.9534 2.4158 14.5684 2.50747 14.3875 2.80163C14.2075 3.09663 14.2992 3.4808 14.5934 3.66163C15.5875 4.26997 16.4592 5.1008 17.1159 6.06413C17.2367 6.24163 17.4325 6.33663 17.6325 6.33663C17.7534 6.33663 17.8759 6.30163 17.9842 6.2283C18.2692 6.03413 18.3425 5.64497 18.1484 5.35997Z" fill="#163A34"/>
+          </svg>
+          Prep: {{ recipe.prepMinutes }} mins
+        </label>
+        <label class="flex gap-1 items-center">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.2219 2.09712C6.97782 1.85304 6.58209 1.85304 6.33802 2.09712C6.09394 2.3412 6.09394 2.73693 6.33802 2.98101C6.4834 3.12639 6.48274 3.36114 6.33848 3.5051C5.70544 4.13814 5.70432 5.16552 6.33848 5.79835C6.58281 6.04218 6.97854 6.04176 7.22236 5.79743C7.46619 5.55309 7.46577 5.15737 7.22144 4.91354C7.07718 4.76959 7.07651 4.53484 7.2219 4.38945C7.85559 3.75658 7.85478 2.73 7.2219 2.09712Z" fill="#163A34"/>
+            <path d="M15.4614 4.90581C15.7055 4.66173 15.7055 4.26601 15.4614 4.02192C15.2173 3.77785 14.8216 3.77785 14.5775 4.02192C13.9445 4.65496 13.9438 5.68188 14.578 6.31472C14.8223 6.55854 15.218 6.55812 15.4619 6.31379C15.7057 6.06946 15.7053 5.67373 15.461 5.42991C15.3167 5.28595 15.316 5.0512 15.4614 4.90581Z" fill="#163A34"/>
+            <path d="M3.50297 5.43049C3.2589 5.18642 2.86317 5.18642 2.61909 5.43049C2.37502 5.67458 2.37502 6.0703 2.61909 6.31438C2.76448 6.45977 2.76382 6.69452 2.61955 6.83848C2.37523 7.0823 2.37481 7.47803 2.61863 7.72236C2.86246 7.96669 3.25818 7.96711 3.50252 7.72328C4.13667 7.09045 4.13601 6.06353 3.50297 5.43049Z" fill="#163A34"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99964 5.21826C9.04497 5.21826 8.27277 5.99247 8.27277 6.94596V7.51381C5.11684 8.18293 2.74769 10.6428 2.92594 13.6089C2.93916 13.8289 3.12144 14.0006 3.34185 14.0006H16.6582C16.8786 14.0006 17.061 13.8289 17.0741 13.6088C17.2516 10.6427 14.8822 8.18269 11.7266 7.51371V6.94596C11.7266 5.99217 10.9532 5.21826 9.99964 5.21826ZM10.4766 7.34737V6.94596C10.4766 6.68193 10.2623 6.46826 9.99964 6.46826C9.73655 6.46826 9.5228 6.68163 9.5228 6.94596V7.3474C9.68064 7.33847 9.8398 7.33394 10.0001 7.33394C10.16 7.33394 10.3189 7.33846 10.4766 7.34737Z" fill="#163A34"/>
+            <path d="M2.33183 15.0699C2.50018 14.9348 2.70638 14.8824 2.91676 14.8824H17.0834C17.2938 14.8824 17.5 14.9348 17.6684 15.0699C17.837 15.2053 17.9217 15.3869 17.9586 15.5584C18.0275 15.8786 17.9479 16.2422 17.8521 16.5301C17.5836 17.3352 16.8291 17.879 15.9802 17.879H4.01998C3.17101 17.879 2.41658 17.3354 2.14822 16.5303C2.05238 16.2424 1.97268 15.8786 2.04153 15.5584C2.07842 15.3869 2.16323 15.2053 2.33183 15.0699Z" fill="#163A34"/>
+          </svg>
+          Cook: {{ recipe.cookMinutes }} mins
+        </label>
+      </div>
+      <a routerLink="/about"
+         class="button bg-neutral-900 text-white px-8 py-3 rounded-full text-preset-8 flex justify-center">
+        Start exploring
+      </a>
+    </div>
+  </div>
+</app-container>

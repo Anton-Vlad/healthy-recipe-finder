@@ -2,7 +2,9 @@
 
 <router-outlet />
 
-<app-container class="flex z-10 relative pt-[40px] pb-[40px]">
+<app-container
+  [ngClass]="isRecipesRoute() ? 'border-t' : ''"
+  class="flex z-10 relative pt-[40px] pb-[40px]">
   <div class="flex flex-row justify-between w-full text-preset-9 text-neutral-600">
     <div>
       Made with ❤️ and 🥑
