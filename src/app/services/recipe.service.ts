@@ -30,8 +30,22 @@ export class RecipeService {
     return of([...this.recipes]);
   }
 
-  getRecipeById(id: number): Observable<Recipe | undefined> {
-    return of(this.recipes.find(recipe => recipe.id === id));
+  getRecipeById(id: string): Observable<Recipe> {
+    return new Observable(observer => {
+      try {
+        const intId = parseInt(id, 10);
+        const recipe = this.recipes.find(r => r.id === intId);
+
+        if (recipe) {
+          observer.next(recipe);
+          observer.complete();
+        } else {
+          observer.error(new Error('Recipe not found'));
+        }
+      } catch (error) {
+        observer.error(new Error('Recipe not found'));
+      }
+    });
   }
 
   getRecipeBySlug(slug: string): Observable<Recipe | undefined> {

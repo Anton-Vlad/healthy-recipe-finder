@@ -16,7 +16,7 @@ export class MenuComponent {
     { label: "Recipes", route: "/recipes" }
   ];
   @Input() ctaButtonLabel: string = "Browse recipes";
-  @Input() ctaButtonRoute: string = "/";
+  @Input() ctaButtonRoute: string = "/recipes";
 
   isMobileMenuOpen = false;
 

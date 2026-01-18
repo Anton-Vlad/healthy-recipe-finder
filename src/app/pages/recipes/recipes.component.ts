@@ -3,6 +3,7 @@ import { ContainerComponent } from "../../components/container/container.compone
 import { RecipeService, Recipe } from "../../services/recipe.service";
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {RecipeTimesComponent} from '../../components/recipe-times/recipe-times.component';
 
 @Component({
   selector: 'app-recipes',
@@ -10,7 +11,8 @@ import {RouterLink} from '@angular/router';
     ContainerComponent,
     CommonModule,
     NgOptimizedImage,
-    RouterLink
+    RouterLink,
+    RecipeTimesComponent
   ],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css'
