@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ContainerComponent } from "../../components/container/container.component";
 import { RecipeService, Recipe } from "../../services/recipe.service";
-import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {RouterLink} from '@angular/router';
-import {RecipeTimesComponent} from '../../components/recipe-times/recipe-times.component';
+import {CommonModule} from '@angular/common';
+import {RecipeGridComponent} from '../../components/recipe-grid/recipe-grid.component';
 
 @Component({
   selector: 'app-recipes',
   imports: [
     ContainerComponent,
     CommonModule,
-    NgOptimizedImage,
-    RouterLink,
-    RecipeTimesComponent
+    RecipeGridComponent
   ],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css'
