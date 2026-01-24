@@ -12,11 +12,26 @@
 
 <app-container>
   <div class="flex flex-row gap-4 mb-6">
-    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">Max Prep Time</div>
-    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">Max Cook Time</div>
-    <div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900 ms-auto me-0">Search by name or ingredient…</div>
+    <app-max-prep-time
+      [initialValue]="maxPrepTime()"
+      (filterChange)="onPrepTimeFilterChange($event)"
+    />
+    <app-max-cook-time
+      [initialValue]="maxCookTime()"
+      (filterChange)="onCookTimeFilterChange($event)"
+    />
+    <app-search-filter
+      [initialValue]="searchTerm()"
+      (searchChange)="onSearchChange($event)"
+      class="ms-auto me-0"
+    />
   </div>
-  <div *ngIf="loading">Loading recipes...</div>
 
-  <app-recipe-grid [recipes]="recipes" />
+  <div *ngIf="loading()">Loading recipes...</div>
+
+  <div *ngIf="!loading() && recipes().length === 0" class="text-center py-8">
+    <p class="text-preset-5 text-neutral-500">No recipes found matching your filters.</p>
+  </div>
+
+  <app-recipe-grid [recipes]="recipes()" />
 </app-container>

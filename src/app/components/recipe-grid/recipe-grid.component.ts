@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {Recipe} from '../../services/recipe.service';
 import {RouterLink} from '@angular/router';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
@@ -16,5 +16,5 @@ import {RecipeTimesComponent} from '../recipe-times/recipe-times.component';
   styleUrl: './recipe-grid.component.css'
 })
 export class RecipeGridComponent {
-  @Input() recipes: Recipe[] = [];
+  recipes = input<Recipe[]>([]);
 }

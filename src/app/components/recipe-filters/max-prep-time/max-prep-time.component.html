@@ -1,0 +1,15 @@
+<div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">
+  <label for="max-prep-time" class="me-0">
+    Max Prep Time
+  </label>
+  <select
+    [(ngModel)]="selectedTime"
+    (ngModelChange)="onTimeChange($event)"
+    class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900 ms-3"
+  >
+    <option value=""></option>
+    <option value="0m">0 min</option>
+    <option value="5m">5 min</option>
+    <option value="10m">10 min</option>
+  </select>
+</div>
