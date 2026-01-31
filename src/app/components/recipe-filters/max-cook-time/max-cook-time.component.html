@@ -1,16 +1,16 @@
-<div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">
-  <label for="max-cook-time" class="me-0">
-    Max Cook Time
-  </label>
-  <select
-    [(ngModel)]="selectedTime"
-    (ngModelChange)="onTimeChange($event)"
-    class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900"
-  >
-    <option value=""></option>
-    <option value="0m">0 min</option>
-    <option value="5m">5 min</option>
-    <option value="10m">10 min</option>
-    <option value="20m">20 min</option>
-  </select>
-</div>
+<label for="max-cook-time" class="text-preset-9 text-neutral-600 mb-1 block">
+  Max Cook Time
+</label>
+<select
+  id="max-cook-time"
+  [(ngModel)]="selectedTime"
+  (ngModelChange)="onTimeChange($event)"
+  class="w-full bg-neutral-0 px-4 py-2.5 border rounded-lg text-preset-7 text-neutral-900 appearance-none cursor-pointer outline-none focus:border-[var(--color-teal-500)] transition-colors"
+  [class.text-neutral-300]="!selectedTime()"
+>
+  <option value="" disabled>Select option</option>
+  <option value="0m" class="text-neutral-900">0 min</option>
+  <option value="5m" class="text-neutral-900">5 min</option>
+  <option value="10m" class="text-neutral-900">10 min</option>
+  <option value="20m" class="text-neutral-900">20 min</option>
+</select>

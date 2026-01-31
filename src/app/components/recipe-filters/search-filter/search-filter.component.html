@@ -1,9 +1,11 @@
-<!--<div class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900">-->
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    (ngModelChange)="onSearchChange($event)"
-    placeholder="Search by name or ingredient…"
-    class="bg-neutral-0 px-4 py-2 border rounded-lg text-preset-7 text-neutral-900"
-  />
-<!--</div>-->
+<label for="search-filter" class="text-preset-9 text-neutral-600 mb-1 block">
+  Search by
+</label>
+<input
+  id="search-filter"
+  type="text"
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="onSearchChange($event)"
+  placeholder="name or ingredient…"
+  class="w-full bg-neutral-0 px-4 py-2.5 border rounded-lg text-preset-7 text-neutral-900 outline-none focus:border-[var(--color-teal-500)] transition-colors placeholder:text-neutral-300"
+/>
