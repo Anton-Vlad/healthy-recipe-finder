@@ -15,6 +15,7 @@
           "options": {
             "outputPath": "dist/healthy-recipe-finder",
             "index": "src/index.html",
+            "baseHref": "/healthy-recipe-finder/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
