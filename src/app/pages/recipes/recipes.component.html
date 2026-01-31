@@ -11,7 +11,7 @@
 </app-container>
 
 <app-container>
-  <div class="flex flex-row gap-4 mb-6 items-end">
+  <div class="flex flex-col md:flex-row gap-4 mb-6 md:items-end">
     <app-max-prep-time
       [initialValue]="maxPrepTime()"
       (filterChange)="onPrepTimeFilterChange($event)"
@@ -23,7 +23,7 @@
     <app-search-filter
       [initialValue]="searchTerm()"
       (searchChange)="onSearchChange($event)"
-      class="ms-auto me-0"
+      class="md:ms-auto md:me-0"
     />
   </div>
 
