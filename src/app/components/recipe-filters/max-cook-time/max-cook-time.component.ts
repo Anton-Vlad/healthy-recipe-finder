@@ -23,7 +23,8 @@ export class MaxCookTimeComponent {
       const initial = this.initialValue();
       if (initial !== null) {
         this.selectedTime.set(initial.toString() + 'm');
-        console.log(initial.toString() + 'm');
+      } else {
+        this.selectedTime.set('');
       }
     });
   }

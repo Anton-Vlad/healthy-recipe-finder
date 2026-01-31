@@ -20,6 +20,13 @@
       [initialValue]="maxCookTime()"
       (filterChange)="onCookTimeFilterChange($event)"
     />
+    <button
+      *ngIf="hasActiveFilters()"
+      (click)="clearFilters()"
+      class="self-end px-4 py-2.5 text-preset-8 text-neutral-600 hover:text-neutral-900 cursor-pointer transition-colors whitespace-nowrap"
+    >
+      Clear filters
+    </button>
     <app-search-filter
       [initialValue]="searchTerm()"
       (searchChange)="onSearchChange($event)"

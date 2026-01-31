@@ -29,6 +29,10 @@ export class RecipesComponent implements OnInit {
   maxCookTime = signal<number | null>(null);
   searchTerm = signal('');
 
+  hasActiveFilters = computed(() => {
+    return this.maxPrepTime() !== null || this.maxCookTime() !== null || this.searchTerm() !== '';
+  });
+
   recipes = computed(() => {
     return this.allRecipes().filter(recipe => {
       if (this.maxPrepTime() != null && recipe.prepMinutes > this.maxPrepTime()!) {
@@ -124,5 +128,11 @@ export class RecipesComponent implements OnInit {
 
   onSearchChange(searchTerm: string) {
     this.searchTerm.set(searchTerm.trim());
+  }
+
+  clearFilters() {
+    this.maxPrepTime.set(null);
+    this.maxCookTime.set(null);
+    this.searchTerm.set('');
   }
 }

@@ -19,8 +19,10 @@ export class MaxPrepTimeComponent {
     // Set initial value when component loads
     effect(() => {
       const initial = this.initialValue();
-      if (initial) {
+      if (initial !== null) {
         this.selectedTime.set(initial.toString() + 'm');
+      } else {
+        this.selectedTime.set('');
       }
     });
   }
