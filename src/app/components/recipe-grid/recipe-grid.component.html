@@ -1,14 +1,13 @@
 <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
   @for (recipe of recipes(); track recipe.id) {
   <div class="recipe-item p-2 bg-neutral-0 rounded-lg shadow-md">
-    <div class="overflow-hidden h-[300px] md:h-[450px] lg:h-[300px] rounded-lg mb-4">
+    <div class="overflow-hidden h-[300px] md:h-[450px] lg:h-[300px] rounded-lg mb-4 relative">
       <img
         [ngSrc]="recipe.image.large"
         [alt]="recipe.title"
-        width="360"
-        height="360"
-        class="w-full h-full object-cover"
-        priority
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        class="object-cover"
       />
     </div>
     <div class="mx-2 mb-4">

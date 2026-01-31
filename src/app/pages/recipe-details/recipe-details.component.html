@@ -15,11 +15,12 @@
     <div *ngIf="!loading && recipe; else noData" class="flex flex-col lg:flex-row gap-10 flex-wrap">
       <div class="flex-1 lg:flex-[0_0_50%]">
         <img
-          [src]="recipe.image.large"
-          alt="{{ recipe.title }}"
-          width="1372"
-          height="973"
-          class="w-full h-auto rounded-xl object-cover"
+          [ngSrc]="recipe.image.large"
+          [alt]="recipe.title"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          class="!relative w-full h-auto rounded-xl object-cover"
+          priority
         />
       </div>
       <div class="flex-1 lg:flex-[0_0_50]">
